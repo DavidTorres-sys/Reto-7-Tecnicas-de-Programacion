@@ -9,8 +9,8 @@ public abstract class TramoGenerico  {
   public TramoGenerico(double X, double Y){
   }
 
-  public abstract void area();
-  public abstract void volumen();
+  public abstract double area();
+  public abstract double volumen();
 
   //MÉTODOS VACÍOS
   public void ubicaPunto2(){
@@ -26,7 +26,7 @@ public abstract class TramoGenerico  {
   public double longitud(TramoGenerico a, TramoGenerico b){
     double cateto1 = a.x-b.x;
     double cateto2 = a.y-b.y;
-    double hipotenusa = Math.sqrt(cateto1*cateto1+cateto2*cateto2);
+    double hipotenusa = Math.sqrt((cateto1*cateto1)+(cateto2*cateto2));
     return hipotenusa;
   }
 }
