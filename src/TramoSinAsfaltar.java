@@ -1,9 +1,6 @@
 public class TramoSinAsfaltar extends TramoGenerico{
 
-  private String tipoMaterial;
-  private String piedra;
-  private String arena;
-  private String balastro;
+  String [] tipoMaterial = {piedra, arena,balastro };
 
   private float coordenadasXInicio;
 
@@ -16,8 +13,8 @@ public class TramoSinAsfaltar extends TramoGenerico{
   private final double ESPESOR_ARENA = 0.20;
   private final double ESPESOR_BALASTRO = 0.30;
 
-  public TramoSinAsfaltar(String tipoMaterial, String piedra, String balastro, String arena, float coordenadasXInicio, float coordenadasXFinal, float coordenadasYInicio, float coordenadasYFinal) {
-    this.tipoMaterial = tipoMaterial;
+  public TramoSinAsfaltar(float coordenadasXInicio, float coordenadasXFinal,
+                          float coordenadasYInicio, float coordenadasYFinal) {
     this.coordenadasXInicio = coordenadasXInicio;
     this.coordenadasXFinal = coordenadasXFinal;
     this.coordenadasYInicio = coordenadasYInicio;
@@ -35,14 +32,16 @@ public class TramoSinAsfaltar extends TramoGenerico{
 
   @Override
   public double volumen() {
-    if (tipoMaterial == piedra){
-      return area() * ESPESOR_PIEDRA;
-    }
-    if(tipoMaterial == arena){
-      return area() * ESPESOR_ARENA;
-    }
-    if(tipoMaterial == balastro){
-      return area() * ESPESOR_BALASTRO;
+    for(int i = 0 ; i < tipoMaterial.length ; i ++  ) {
+      if (tipoMaterial.equals(piedra)) {
+        return area() * ESPESOR_PIEDRA;
+      }
+      if (tipoMaterial.equals(arena)) {
+        return area() * ESPESOR_ARENA;
+      }
+      if (tipoMaterial.equals(balastro)) {
+        return area() * ESPESOR_BALASTRO;
+      }
     }
     return 0;
   }
