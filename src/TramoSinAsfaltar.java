@@ -1,80 +1,82 @@
+import java.util.Objects;
+
 public class TramoSinAsfaltar extends TramoGenerico{
 
-  String [] tipoMaterial = {piedra, arena,balastro };
+  String materiales;
+  String [] tipoMaterial = {"piedra", "arena", "balastro" };
 
-  private float coordenadasXInicio;
+  private double coordenadasXInicio;
+  private double coordenadasXFinal;
+  private double coordenadasYInicio;
+  private double coordenadasYFinal;
 
-  private float coordenadasXFinal;
-  private float coordenadasYInicio;
-  private float coordenadasYFinal;
+  public final int ANCHO = 6;
+  public final double ESPESOR_PIEDRA = 0.25;
+  public final double ESPESOR_ARENA = 0.20;
+  public final double ESPESOR_BALASTRO = 0.30;
 
-  private final int ANCHO = 6;
-  private final double ESPESOR_PIEDRA = 0.25;
-  private final double ESPESOR_ARENA = 0.20;
-  private final double ESPESOR_BALASTRO = 0.30;
-
-  public TramoSinAsfaltar(float coordenadasXInicio, float coordenadasXFinal,
-                          float coordenadasYInicio, float coordenadasYFinal) {
+  public TramoSinAsfaltar(double coordenadasXInicio, double coordenadasXFinal,
+                          double coordenadasYInicio, double coordenadasYFinal) {
     this.coordenadasXInicio = coordenadasXInicio;
     this.coordenadasXFinal = coordenadasXFinal;
     this.coordenadasYInicio = coordenadasYInicio;
     this.coordenadasYFinal = coordenadasYFinal;
-    this.piedra = piedra;
-    this.arena = arena;
-    this.balastro = balastro;
   }
 
   @Override
   public double area() {
-    return longitud()  * ANCHO;
+    return longitud() * ANCHO;
   }
-
 
   @Override
   public double volumen() {
-    for(int i = 0 ; i < tipoMaterial.length ; i ++  ) {
-      if (tipoMaterial.equals(piedra)) {
+    for(int i = 0 ; i < tipoMaterial.length ; i++) {
+      if (Objects.equals(tipoMaterial[i], tipoMaterial[0])) {
         return area() * ESPESOR_PIEDRA;
       }
-      if (tipoMaterial.equals(arena)) {
+      if (Objects.equals(tipoMaterial[i], tipoMaterial[1])) {
         return area() * ESPESOR_ARENA;
       }
-      if (tipoMaterial.equals(balastro)) {
+      if (Objects.equals(tipoMaterial[i], tipoMaterial[2])) {
         return area() * ESPESOR_BALASTRO;
       }
     }
-    return 0;
+    return volumen();
   }
 
-  public float getCoordenadasXInicio() {
+  public double getCoordenadasXInicio() {
     return coordenadasXInicio;
   }
 
-  public void setCoordenadasXInicio(float coordenadasXInicio) {
-    this.coordenadasXInicio = coordenadasXInicio;
+  public void setCoordenadasXInicio(double coordenadasXInicio) {
+    System.out.println("Ingresar la coordenada X de inicio");
+    coordenadasXInicio = entrada.nextDouble();
   }
 
-  public float getCoordenadasXFinal() {
+  public double getCoordenadasXFinal() {
     return coordenadasXFinal;
   }
 
-  public void setCoordenadasXFinal(float coordenadasXFinal) {
-    this.coordenadasXFinal = coordenadasXFinal;
+  public void setCoordenadasXFinal(double coordenadasXFinal) {
+    System.out.println("Ingresar la coordenada X de final");
+    coordenadasXFinal = entrada.nextDouble();
   }
 
-  public float getCoordenadasYInicio() {
+  public double getCoordenadasYInicio() {
     return coordenadasYInicio;
   }
 
-  public void setCoordenadasYInicio(float coordenadasYInicio) {
-    this.coordenadasYInicio = coordenadasYInicio;
+  public void setCoordenadasYInicio(double coordenadasYInicio) {
+    System.out.println("Ingresar la coordenada Y de inicio");
+    coordenadasYInicio = entrada.nextDouble();
   }
 
-  public float getCoordenadasYFinal() {
+  public double getCoordenadasYFinal() {
     return coordenadasYFinal;
   }
 
-  public void setCoordenadasYFinal(float coordenadasYFinal) {
-    this.coordenadasYFinal = coordenadasYFinal;
+  public void setCoordenadasYFinal(double coordenadasYFinal) {
+    System.out.println("Ingresar la coordenada Y de final");
+    coordenadasYFinal = entrada.nextDouble();
   }
 }

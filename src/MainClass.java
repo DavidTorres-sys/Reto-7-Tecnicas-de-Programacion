@@ -1,10 +1,10 @@
 public class MainClass {
   public static void main(String[] args){
-//    TramoGenerico a = new TramoGenerico();
-//    TramoGenerico b = new TramoGenerico (3,5);
-//    TramoGenerico c = new TramoGenerico();
+   // TramoGenerico carretera = new TramoGenerico();
 
 
-  //  System.out.println("LA DISTANCIA ENTRE LOS 2 PUNTOS ES: "+c.longitud(a, b));
+//    carretera.longitud(5.5, 3.3);
+  //  carretera.area(5.5, 3.3);
+    //carretera.volumen(5.5, 3.3, 0.25);
   }
 }
