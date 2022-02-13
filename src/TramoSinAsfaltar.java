@@ -2,7 +2,6 @@ import java.util.Objects;
 
 public class TramoSinAsfaltar extends TramoGenerico{
 
-  String materiales;
   String [] tipoMaterial = {"piedra", "arena", "balastro" };
 
   private double coordenadasXInicio;
@@ -21,6 +20,16 @@ public class TramoSinAsfaltar extends TramoGenerico{
     this.coordenadasXFinal = coordenadasXFinal;
     this.coordenadasYInicio = coordenadasYInicio;
     this.coordenadasYFinal = coordenadasYFinal;
+  }
+
+  @Override
+  public double longitud() {
+    double longitud = y-x;
+    if(longitud < 0){
+      longitud = longitud*(-1);
+    }
+    System.out.println("La longitud del tramo es: "+longitud);
+    return longitud;
   }
 
   @Override
@@ -49,8 +58,7 @@ public class TramoSinAsfaltar extends TramoGenerico{
   }
 
   public void setCoordenadasXInicio(double coordenadasXInicio) {
-    System.out.println("Ingresar la coordenada X de inicio");
-    coordenadasXInicio = entrada.nextDouble();
+    this.coordenadasXInicio = coordenadasXInicio;
   }
 
   public double getCoordenadasXFinal() {
@@ -58,8 +66,7 @@ public class TramoSinAsfaltar extends TramoGenerico{
   }
 
   public void setCoordenadasXFinal(double coordenadasXFinal) {
-    System.out.println("Ingresar la coordenada X de final");
-    coordenadasXFinal = entrada.nextDouble();
+    this.coordenadasXFinal = coordenadasXFinal;
   }
 
   public double getCoordenadasYInicio() {
@@ -67,8 +74,7 @@ public class TramoSinAsfaltar extends TramoGenerico{
   }
 
   public void setCoordenadasYInicio(double coordenadasYInicio) {
-    System.out.println("Ingresar la coordenada Y de inicio");
-    coordenadasYInicio = entrada.nextDouble();
+    this.coordenadasYInicio = coordenadasYInicio;
   }
 
   public double getCoordenadasYFinal() {
@@ -76,7 +82,6 @@ public class TramoSinAsfaltar extends TramoGenerico{
   }
 
   public void setCoordenadasYFinal(double coordenadasYFinal) {
-    System.out.println("Ingresar la coordenada Y de final");
-    coordenadasYFinal = entrada.nextDouble();
+    this.coordenadasYFinal = coordenadasYFinal;
   }
 }
