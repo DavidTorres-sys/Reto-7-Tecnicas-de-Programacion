@@ -9,7 +9,6 @@ public abstract class TramoGenerico  {
 
   //AREA = LARGO*ANCHO
   //VOLÚMEN = LARGO*ANCHO*ALTURA
-  protected double largo;
   private double ancho;
   private double altura; //PROFUNDIDAD/ESPESOR
 
@@ -17,10 +16,9 @@ public abstract class TramoGenerico  {
   //CONSTRUCTORES
   public TramoGenerico(){
   }
-  public TramoGenerico(double x, double y, double largo, double ancho, double altura){
+  public TramoGenerico(double x, double y, double ancho, double altura){
     this.x=x;
     this.y=y;
-    this.largo=largo;
     this.ancho=ancho;
     this.altura=altura;
   }
@@ -37,7 +35,7 @@ public abstract class TramoGenerico  {
   //TO STRING
   @Override
   public String toString() {
-    return "TramoGen{" + "entrada=" + entrada + ", x=" + x + ", y=" + y + ", largo=" + largo + ", ancho=" + ancho + ", altura=" + altura + '}';
+    return "TramoGen{" + "entrada=" + entrada + ", x=" + x + ", y=" + y + ", ancho=" + ancho + ", altura=" + altura + '}';
   }
 
   public void setAncho(double ancho) {

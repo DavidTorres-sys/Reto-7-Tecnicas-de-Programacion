@@ -24,11 +24,11 @@ public class TramoSinAsfaltar extends TramoGenerico{
 
   @Override
   public double longitud() {
-    double longitud = y-x;
+    double longitud = Math.sqrt((coordenadasXFinal - coordenadasXInicio) * (coordenadasXFinal - coordenadasXInicio) +
+        (coordenadasYFinal - coordenadasYInicio) * (coordenadasYFinal - coordenadasYInicio));
     if(longitud < 0){
       longitud = longitud*(-1);
     }
-    System.out.println("La longitud del tramo es: "+longitud);
     return longitud;
   }
 

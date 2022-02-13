@@ -7,26 +7,37 @@ public class TramoAsfaltado extends TramoGenerico{
   final double ANCHO = 8;
   final double ALTURA = 0.25;
 
+  protected int coordenadasXInicio;
+  protected int coordenadasXFinal;
+  protected int coordenadasYInicio;
+  protected int coordenadasYFinal;
+
+  public TramoAsfaltado(int coordenadasXInicio, int coordenadasXFinal,
+                        int coordenadasYInicio, int coordenadasYFinal) {
+    this.coordenadasXInicio = coordenadasXInicio;
+    this.coordenadasXFinal = coordenadasXFinal;
+    this.coordenadasYInicio = coordenadasYInicio;
+    this.coordenadasYFinal = coordenadasYFinal;
+  }
 
   //METEDOS PADRE
   public double longitud() {
-    double longitud = y-x;
+    double longitud = Math.sqrt((coordenadasXFinal - coordenadasXInicio) * (coordenadasXFinal - coordenadasXInicio) +
+        (coordenadasYFinal - coordenadasYInicio) * (coordenadasYFinal - coordenadasYInicio));
     if(longitud < 0){
       longitud = longitud*(-1);
     }
-    System.out.println("La longitud del tramo es: "+longitud);
     return longitud;
   }
 
   public double area() {
-    double area = largo* ANCHO;
-    System.out.println("El area de su carretera es: "+area);
+    double area = longitud() * ANCHO;
     return area;
   }
 
 
   public double volumen() {
-    double volumen = largo * ANCHO * ALTURA;
+    double volumen = longitud() * ANCHO * ALTURA;
     System.out.println("El volumen de su carretera es: "+volumen);
     return volumen;
   }
@@ -50,17 +61,6 @@ public class TramoAsfaltado extends TramoGenerico{
     y = entrada.nextDouble();
   }
 
-  public double getLargo(){
-    return this.largo;
-  }
-  public void setLargo(){
-    System.out.println("Ingrese el largo de la carretera");
-    largo = entrada.nextDouble();
-  }
-
-  public double getANCHO(){
-    return this.largo;
-  }
   public void setANCHO(){
   }
 
