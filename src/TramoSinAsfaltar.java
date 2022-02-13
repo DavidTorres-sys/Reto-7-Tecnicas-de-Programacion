@@ -4,18 +4,18 @@ public class TramoSinAsfaltar extends TramoGenerico{
 
   String [] tipoMaterial = {"piedra", "arena", "balastro" };
 
-  private double coordenadasXInicio;
-  private double coordenadasXFinal;
-  private double coordenadasYInicio;
-  private double coordenadasYFinal;
+  private int coordenadasXInicio;
+  private int coordenadasXFinal;
+  private int coordenadasYInicio;
+  private int coordenadasYFinal;
 
   public final int ANCHO = 6;
   public final double ESPESOR_PIEDRA = 0.25;
   public final double ESPESOR_ARENA = 0.20;
   public final double ESPESOR_BALASTRO = 0.30;
 
-  public TramoSinAsfaltar(double coordenadasXInicio, double coordenadasXFinal,
-                          double coordenadasYInicio, double coordenadasYFinal) {
+  public TramoSinAsfaltar(int coordenadasXInicio,int coordenadasYInicio,
+                          int coordenadasXFinal, int coordenadasYFinal) {
     this.coordenadasXInicio = coordenadasXInicio;
     this.coordenadasXFinal = coordenadasXFinal;
     this.coordenadasYInicio = coordenadasYInicio;
@@ -53,35 +53,35 @@ public class TramoSinAsfaltar extends TramoGenerico{
     return volumen();
   }
 
-  public double getCoordenadasXInicio() {
+  public int getCoordenadasXInicio() {
     return coordenadasXInicio;
   }
 
-  public void setCoordenadasXInicio(double coordenadasXInicio) {
+  public void setCoordenadasXInicio(int coordenadasXInicio) {
     this.coordenadasXInicio = coordenadasXInicio;
   }
 
-  public double getCoordenadasXFinal() {
+  public int getCoordenadasXFinal() {
     return coordenadasXFinal;
   }
 
-  public void setCoordenadasXFinal(double coordenadasXFinal) {
+  public void setCoordenadasXFinal(int coordenadasXFinal) {
     this.coordenadasXFinal = coordenadasXFinal;
   }
 
-  public double getCoordenadasYInicio() {
+  public int getCoordenadasYInicio() {
     return coordenadasYInicio;
   }
 
-  public void setCoordenadasYInicio(double coordenadasYInicio) {
+  public void setCoordenadasYInicio(int coordenadasYInicio) {
     this.coordenadasYInicio = coordenadasYInicio;
   }
 
-  public double getCoordenadasYFinal() {
+  public int getCoordenadasYFinal() {
     return coordenadasYFinal;
   }
 
-  public void setCoordenadasYFinal(double coordenadasYFinal) {
+  public void setCoordenadasYFinal(int coordenadasYFinal) {
     this.coordenadasYFinal = coordenadasYFinal;
   }
 }
