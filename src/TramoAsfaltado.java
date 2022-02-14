@@ -38,7 +38,6 @@ public class TramoAsfaltado extends TramoGenerico{
 
   public double volumen() {
     double volumen = longitud() * ANCHO * ALTURA;
-    System.out.println("El volumen de su carretera es: "+volumen);
     return volumen;
   }
 

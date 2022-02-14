@@ -9,8 +9,8 @@ public abstract class TramoGenerico  {
 
   //AREA = LARGO*ANCHO
   //VOLÚMEN = LARGO*ANCHO*ALTURA
-  private double ancho;
-  private double altura; //PROFUNDIDAD/ESPESOR
+  protected double ancho;
+  protected double altura; //PROFUNDIDAD/ESPESOR
 
 
   //CONSTRUCTORES
@@ -28,9 +28,6 @@ public abstract class TramoGenerico  {
   public abstract double longitud();
   public abstract double area();
   public abstract double volumen();
-
-
-
 
   //TO STRING
   @Override
